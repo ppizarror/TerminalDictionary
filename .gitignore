@@ -1,0 +1,5 @@
+# Compiled python file
+*.pyc
+
+# OS-X cache files
+.DS_Store
