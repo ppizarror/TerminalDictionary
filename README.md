@@ -7,3 +7,23 @@ Diccionario online directamente en la terminal, hecho en python.
 Para ejecutar el diccionario basta ingresar el siguiente comando en la terminal _python dict.py_.
 
 Puede adicionalmente consultar la ayuda con _python dict.py —help_.
+
+## Ejemplos
+
+![usage][image-1]
+![Definición en español][image-2]
+![Sinónimos en español (también en inglés)][image-3]
+![Buscando en varios diccionarios][image-4]
+
+## Licencia
+Este proyecto está licenciado bajo [GPLv2 (GNU General Public License, version 2)][1].
+
+## Autor
+Pablo Pizarro
+
+[1]:	https://www.gnu.org/licenses/gpl-2.0.html
+
+[image-1]:	https://raw.githubusercontent.com/ppizarror/ppizarror.github.io/master/resources/images/dict/uso.png "Uso del script"
+[image-2]:	https://raw.githubusercontent.com/ppizarror/ppizarror.github.io/master/resources/images/dict/espanol.png "Español"
+[image-3]:	https://raw.githubusercontent.com/ppizarror/ppizarror.github.io/master/resources/images/dict/sinonimos.png "Sinónimos"
+[image-4]:	https://raw.githubusercontent.com/ppizarror/ppizarror.github.io/master/resources/images/dict/extenso.png "Busqueda en varios diccionarios"
