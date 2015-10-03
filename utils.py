@@ -9,9 +9,14 @@
 # Licencia: CC BY-NC 4.0
 
 # Importación de liberías de alto nivel
+LIBSTAT = [True, True]
+
 import sys
 import os
-import pygame
+try:
+    import pygame
+except:
+    LIBSTAT[0] = False
 
 # Configuración de las librerías de alto nivel
 reload(sys)
@@ -288,14 +293,12 @@ def getBetween(html, a, b):
     return html[posa:posb]
 
 
-# Función que retorna un valor entre dos tags
-def getBetweenTags(html, tagi, tagf):
+def getBetweenTags(html, tagi, tagf):  # Función que retorna un valor entre dos tags
     tagi = tagi.strip()
     tagf = tagf.strip()
     try:  # Busco el primer tag
         posi = html.index(tagi)  # busco el primer tag
-        # Si el tag incluia la viñeta < y no finalizaba
-        if ("<" in tagi) and (">" not in tagi):
+        if ("<" in tagi) and (">" not in tagi):  # Si el tag incluia la viñeta < y no finalizaba
             c = 1
             while True:
                 try:
@@ -329,8 +332,7 @@ def getWithTags(html, tagi, tagf):
         return TAG_INIT_NOT_FINDED  # no se encontró el primer tag
     try:
         posf = html.index(tagf, posi)  # busco el segundo tag
-        # Si el tag incluia la viñeta < y no finalizaba
-        if ("<" in tagf) and (">" not in tagf):
+        if ("<" in tagf) and (">" not in tagf):  # Si el tag incluia la viñeta < y no finalizaba
             c = 1
             while True:
                 try:
@@ -352,7 +354,6 @@ def getWithTags(html, tagi, tagf):
 
 # Definicion de clases
 class Browser:
-
     """Navegador web"""
 
     def __init__(self):  # Función constuctora
@@ -409,8 +410,7 @@ class Browser:
         else:
             return BR_ERRORxNO_OPENED
 
-    # Definir un formulario como activo mediante un id
-    def selectFormById(self, formid):
+    def selectFormById(self, formid):  # Definir un formulario como activo mediante un id
         formid = str(formid)
         if formid != "":  # Si el id no está vacío
             if formid.isdigit():  # Si es un dígito
@@ -458,7 +458,6 @@ class Browser:
 
 # noinspection PyClassHasNoInit
 class color:
-
     """Clase que permite manejar colores en la terminal"""
 
     # Si el sistema operativo no es windows entonces los colores se activan

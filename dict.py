@@ -15,7 +15,7 @@ from utils import *
 global source
 DEFAULT_LOOK = getConfigValue("source.defaults", True)
 DICTIONARIES = ["[Urban Dictionary]", "[WordReference Español]", "[WordReference Inglés]",
-                "[WordReference Sinónimos Español]",
+                "[WordReference Sinónimos Español]", \
                 "[WordReference Sinónimos Inglés]"]
 REPLACE_ALL = 0x01
 REPLACE_ALPHA = 0x04
@@ -35,14 +35,13 @@ CHARS = {
     REPLACE_SYMBOL: '!"#$%&\'()*+,-./:;?@[\\]^_`{|}~',
     REPLACE_SYMBOL_SIMPLE: '.-) :'}
 SEPARATOR = '<new>'
-VERSION = "1.3"
+VERSION = "1.4"
 CONFIG_DICT_FILE = 'dict.configs'
 
 # Se aplican configuraciones
 if not RESULT_COLORED:
     # noinspection PyClassHasNoInit
     class color:
-
         """Desactiva los colores"""
         PURPLE = ''
         CYAN = ''
@@ -56,8 +55,6 @@ if not RESULT_COLORED:
         END = ''
 
 # Funciones de usuario
-
-
 def getDictName(index):
     """Retorna el nombre de diccionario index"""
     return DICTIONARIES[index].replace("[", "").replace("]", "")
@@ -81,7 +78,7 @@ def printHelp():
     print delAcents("\tDict permite buscar la definición de palabras en múltiples fuentes de forma rápida.")
     print "\ty segura.\n"
     print color.BOLD + "COMANDOS" + color.END
-    print delAcents("\tword, 'phrase' <source>\n\t\tBusca la palabra " + color.BOLD + "word" + color.END +
+    print delAcents("\tword, 'phrase' <source>\n\t\tBusca la palabra " + color.BOLD + "word" + color.END + \
                     " de forma online en distintas fuentes especificadas en \n\t\tsource. Para buscar una palabra compuesta (" + color.BOLD + "phrase" + color.END + "), es necesario usar comillas\n\t\tsimples o dobles, por ejemplo, " + color.BOLD + "'" + color.END + "dict foo" + color.BOLD + "'" + color.END + ".\n\t\tLas fuentes pueden ser definidas usando los siguientes argumentos:\n")
     printSourceConfig("-a", "Buscar en todas las fuentes disponibles")
     printSourceConfig("-en", "Buscar en {0}".format(getDictName(2)))
@@ -103,13 +100,15 @@ def printHelp():
         pass
     confs.sort()
     maxsep = 0
-    avconf = loadConfigFile(CONFIG_DICT_FILE)
+    avconf = loadConfigFile(CONFIG_DICT_FILE).split("\n")
     for f in confs:
         maxsep = max(maxsep, len(f))
     maxsep += 5
     for f in confs:
-        if f in avconf:
-            print "\t{0}{1}".format(f.ljust(maxsep), getConfigValue(f, True, True))
+        for j in avconf:
+            if f==j:
+                print "\t{0}{1}".format(f.ljust(maxsep), getConfigValue(f, True, True))
+                break
     print "\n" + color.BOLD + "AUTOR" + color.END
     print "\tPablo Pizarro, ver en " + color.UNDERLINE + "http://ppizarror.com" + color.END
     print ""
@@ -221,8 +220,7 @@ if __name__ == "__main__":
     # Busqueda en urbandictionary
     if getSource(0):
         try:
-            browser.abrirLink(
-                "http://www.urbandictionary.com/define.php?term={0}".format(word))
+            browser.abrirLink("http://www.urbandictionary.com/define.php?term={0}".format(word))
             if browser.getHtml() == BR_ERRORxNO_OPENED:
                 raise Exception()
             else:
@@ -235,21 +233,16 @@ if __name__ == "__main__":
                         getBetween(content, "<div class='example'>", '</div>').replace("<br>", "").replace("<br/>",
                                                                                                            "").split())))
                     for i in range(9):
-                        query = replace(
-                            query, "({0}*".format(i), SEPARATOR, REPLACE_SYMBOL_SIMPLE)
-                        examples = replace(
-                            examples, "({0}*".format(i), SEPARATOR, REPLACE_SYMBOL_SIMPLE)
-                        query = replace(
-                            query, "{0}*".format(i), SEPARATOR, REPLACE_SYMBOL_SIMPLE)
-                        examples = replace(
-                            examples, "{0}*".format(i), SEPARATOR, REPLACE_SYMBOL_SIMPLE)
+                        query = replace(query, "({0}*".format(i), SEPARATOR, REPLACE_SYMBOL_SIMPLE)
+                        examples = replace(examples, "({0}*".format(i), SEPARATOR, REPLACE_SYMBOL_SIMPLE)
+                        query = replace(query, "{0}*".format(i), SEPARATOR, REPLACE_SYMBOL_SIMPLE)
+                        examples = replace(examples, "{0}*".format(i), SEPARATOR, REPLACE_SYMBOL_SIMPLE)
                     query = query.split(SEPARATOR)
                     examples = examples.split(SEPARATOR)
                     result = []
                     counter = 1
                     excounter = 0
-                    if examples[0] == "":
-                        excounter += 1
+                    if examples[0] == "": excounter += 1
                     for line in query:
                         line = str(line).strip()
                         if line != "":
@@ -258,26 +251,18 @@ if __name__ == "__main__":
                             else:
                                 l = 0
                             while '<a href="/define.php?' in line:
-                                boldline = getWithTags(
-                                    line, '<a href="/define.php?', '</a')
-                                boldword = getBetweenTags(
-                                    boldline, '<a', '</a>').strip()
-                                line = line.replace(
-                                    boldline, color.BOLD + boldword + color.END)
-                            result.append(
-                                " " * (SPACE - l) + "({0}) ".format(counter) + line.capitalize())
+                                boldline = getWithTags(line, '<a href="/define.php?', '</a')
+                                boldword = getBetweenTags(boldline, '<a', '</a>').strip()
+                                line = line.replace(boldline, color.BOLD + boldword + color.END)
+                            result.append(" " * (SPACE - l) + "({0}) ".format(counter) + line.capitalize())
                             if excounter < len(examples):
                                 ex = examples[excounter]
                                 while '<a href="/define.php?' in ex:
-                                    boldline = getWithTags(
-                                        ex, '<a href="/define.php?', '</a')
-                                    boldword = getBetweenTags(
-                                        boldline, '<a', '</a>').strip()
-                                    ex = ex.replace(
-                                        boldline, color.BOLD + boldword + color.END + color.BLUE)
+                                    boldline = getWithTags(ex, '<a href="/define.php?', '</a')
+                                    boldword = getBetweenTags(boldline, '<a', '</a>').strip()
+                                    ex = ex.replace(boldline, color.BOLD + boldword + color.END + color.BLUE)
                                 ex = ex.replace("<a>", "").replace("<A>", "")
-                                result.append(
-                                    "\t" + color.BLUE + ex.capitalize() + color.END)
+                                result.append("\t" + color.BLUE + ex.capitalize() + color.END)
                             counter += 1
                             excounter += 1
                     if len(result) > 0:
@@ -288,47 +273,34 @@ if __name__ == "__main__":
     # Busqueda en WordReference es
     if getSource(1):
         try:
-            browser.abrirLink(
-                "http://www.wordreference.com/definicion/{0}".format(word.replace("+", "%20")))
+            browser.abrirLink("http://www.wordreference.com/definicion/{0}".format(word.replace("+", "%20")))
             if browser.getHtml() == BR_ERRORxNO_OPENED:
                 raise Exception()
             else:
                 content = browser.getHtml()
                 if "No se ha encontrado una" not in content:
-                    query = delAcents(
-                        unescape(getBetween(content, '<div id="article">', '</div'))).split("<li>")
+                    query = delAcents(unescape(getBetween(content, '<div id="article">', '</div'))).split("<li>")
                     new_query = []
                     for l in range(len(query)):
                         if l > 0:
-                            new_query.append(
-                                query[l].replace("<ol>", "").replace("</ol>", "").split("<br>"))
+                            new_query.append(query[l].replace("<ol>", "").replace("</ol>", "").split("<br>"))
                     result = []
                     for i in range(len(new_query)):
-                        definition = delAcents(unescape(new_query[i][0])).strip().replace(
-                            "</span>", color.END)
+                        definition = delAcents(unescape(new_query[i][0])).strip().replace("</span>", color.END)
                         if "<span class=ac>" in definition:
-                            definition = definition.replace(
-                                "<span class=ac>", color.RED)
+                            definition = definition.replace("<span class=ac>", color.RED)
                         if "<span class=b>" in definition:
-                            definition = definition.replace(
-                                "<span class=b>", color.BOLD)
+                            definition = definition.replace("<span class=b>", color.BOLD)
                         if "<span class=i>" in definition:
-                            definition = definition.replace(
-                                "<span class=i>", color.BLUE)
-                        definition = definition.replace(
-                            ":", ".").replace("..", ".")
+                            definition = definition.replace("<span class=i>", color.BLUE)
+                        definition = definition.replace(":", ".").replace("..", ".")
                         l = 0
-                        if i > 8:
-                            l = 1
-                        definition = " " * \
-                            (SPACE - l) + \
-                            "({0}) ".format(i + 1) + definition.capitalize()
+                        if i > 8: l = 1
+                        definition = " " * (SPACE - l) + "({0}) ".format(i + 1) + definition.capitalize()
                         result.append(definition)
                         if len(new_query[i]) > 1:
-                            example = delAcents(
-                                unescape(new_query[i][1])).strip()
-                            example = example.replace(
-                                "<span class=i>", "").replace("</span>", "")
+                            example = delAcents(unescape(new_query[i][1])).strip()
+                            example = example.replace("<span class=i>", "").replace("</span>", "")
                             example = example.capitalize()
                             example = "\t" + color.BLUE + example + color.END
                             result.append(example)
@@ -340,66 +312,48 @@ if __name__ == "__main__":
     # Busqueda en WordReference en
     if getSource(2):
         try:
-            browser.abrirLink(
-                "http://www.wordreference.com/definition/{0}".format(word.replace("+", "%20")))
+            browser.abrirLink("http://www.wordreference.com/definition/{0}".format(word.replace("+", "%20")))
             if browser.getHtml() == BR_ERRORxNO_OPENED:
                 raise Exception()
             else:
                 content = browser.getHtml()
                 if "No dictionary entry found for" not in content:
-                    query = delAcents(
-                        unescape(getBetween(content, '<div id="article">', '</div'))).split("<li>")
+                    query = delAcents(unescape(getBetween(content, '<div id="article">', '</div'))).split("<li>")
                     result = []
                     counter = 1
                     for line in query:
                         if "<span class='rh_empos'>" in line:
-                            title = getBetweenTags(
-                                line, "<span class='rh_empos'>", "</span")
-                            result.append(
-                                color.BOLD + title.strip().upper() + color.END)
-                        line = line.replace(
-                            "<span>]</span>", "").replace("<span>[</span>", "")
-                        line = line.replace(
-                            "<span class='rh_txt'>+</span>", "")
+                            title = getBetweenTags(line, "<span class='rh_empos'>", "</span")
+                            result.append(color.BOLD + title.strip().upper() + color.END)
+                        line = line.replace("<span>]</span>", "").replace("<span>[</span>", "")
+                        line = line.replace("<span class='rh_txt'>+</span>", "")
                         while True:
-                            rhlab = getWithTags(
-                                line, "<span class='rh_lab'>", "</span>")
+                            rhlab = getWithTags(line, "<span class='rh_lab'>", "</span>")
                             if str(rhlab).isdigit():
                                 break
                             else:
                                 line = line.replace(rhlab, "")
-                        subtipe = getWithTags(
-                            line, "<span class='rh_cat'>", "</span>")
+                        subtipe = getWithTags(line, "<span class='rh_cat'>", "</span>")
                         if not str(subtipe).isdigit():
                             line = line.replace(subtipe,
                                                 "[" + color.BOLD + getBetweenTags(subtipe, "<span class='rh_cat'>",
                                                                                   "</span>").strip().capitalize() + color.END + "] ")
-                        definition = str(
-                            getBetweenTags(line, "<span class='rh_def'>", "span")).strip()
+                        definition = str(getBetweenTags(line, "<span class='rh_def'>", "span")).strip()
                         if (not definition.isdigit()) and len(definition) > 1:
-                            definition = definition.replace(
-                                "<b>", color.BOLD).replace("</b>", color.END)
+                            definition = definition.replace("<b>", color.BOLD).replace("</b>", color.END)
                             definition = definition.replace("</", "").replace("<", "").replace("  ", " ").replace(":",
                                                                                                                   ".")
                             l = 0
-                            if counter > 9:
-                                l = 1
-                            definition = definition.replace(
-                                "[ i>~ i>", "").replace(";br>", ";")
-                            definition = definition.replace(
-                                "i>", "").replace("", "")
-                            definition = " " * \
-                                (SPACE - l) + "({0}) ".format(counter) + \
-                                definition.strip().capitalize()
-                            example = str(
-                                getBetweenTags(line, "<span class='rh_ex'>", "span"))
+                            if counter > 9: l = 1
+                            definition = definition.replace("[ i>~ i>", "").replace(";br>", ";")
+                            definition = definition.replace("i>", "").replace("", "")
+                            definition = " " * (SPACE - l) + "({0}) ".format(counter) + definition.strip().capitalize()
+                            example = str(getBetweenTags(line, "<span class='rh_ex'>", "span"))
                             counter += 1
                             result.append(definition)
                             if not example.isdigit() and len(example) > 1:
-                                example = example.replace(
-                                    "</", "").replace("<", "").replace("  ", " ")
-                                example = "\t" + color.END + color.BLUE + \
-                                    example.capitalize() + color.END
+                                example = example.replace("</", "").replace("<", "").replace("  ", " ")
+                                example = "\t" + color.END + color.BLUE + example.capitalize() + color.END
                                 result.append(example)
                     if len(result) > 0:
                         definitions[DICTIONARIES[2]] = result
@@ -409,15 +363,13 @@ if __name__ == "__main__":
     # Busqueda en WordReference sinonimos es
     if getSource(3):
         try:
-            browser.abrirLink(
-                "http://www.wordreference.com/sinonimos/{0}".format(word.replace("+", "%20")))
+            browser.abrirLink("http://www.wordreference.com/sinonimos/{0}".format(word.replace("+", "%20")))
             if browser.getHtml() == BR_ERRORxNO_OPENED:
                 raise Exception()
             else:
                 content = browser.getHtml()
                 if "No se ha encontrado" not in content:
-                    query = delAcents(
-                        unescape(getBetween(content, '<div id="article">', '</div'))).split("<li>")
+                    query = delAcents(unescape(getBetween(content, '<div id="article">', '</div'))).split("<li>")
                     counter = 0
                     result = []
                     for line in query:
@@ -434,15 +386,14 @@ if __name__ == "__main__":
                                     " " * (SPACE - l) + "({0}) ".format(counter) + line.strip().capitalize() + ".")
                                 counter += 1
                             else:
-                                line = line.replace("<span class=r>", color.RED).replace(
-                                    "</span>", color.END)
-                                result.append(
-                                    "\t" + line.capitalize() + color.RED + "." + color.END)
+                                line = line.replace("<span class=r>", color.RED).replace("</span>", color.END)
+                                result.append("\t" + line.capitalize() + color.RED + "." + color.END)
                         counter = max(counter, 1)
                     if len(result) > 0:
                         definitions[DICTIONARIES[3]] = result
         except:
             error("Error al buscar en la fuente: {0}".format(getDictName(3)))
+
 
     # Imprime los resultados
     keys = definitions.keys()
