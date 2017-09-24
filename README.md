@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="ppizarror" src="http://ppizarror.com/resources/other/python.png" width="200px" height="200px" />
+  <img alt="TerminalDictionary" src="http://ppizarror.com/resources/other/python.png" width="200px" height="200px" />
   <br /><br />
   TerminalDictionary</h1>
 <p align="center">Diccionario online directamente en la terminal, hecho en python</p>

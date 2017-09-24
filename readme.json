@@ -3,7 +3,7 @@
         "NAME": "TerminalDictionary",
         "ICON": {
             "IMAGE": "http://ppizarror.com/resources/other/python.png",
-            "ALT": "ppizarror",
+            "ALT": "TerminalDictionary",
             "WIDTH": 200,
             "HEIGHT": 200
         },
