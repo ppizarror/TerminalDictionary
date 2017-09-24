@@ -11,9 +11,9 @@
 **Dict** permite buscar palabras en múltiples diccionarios mediante la terminal, entregando los resultados de forma rápida y en pocos segundos.
 
 ## Uso
-Para ejecutar el diccionario basta ingresar el siguiente comando en la terminal _python dict.py_.
+Para ejecutar el diccionario basta ingresar el siguiente comando en la terminal ```python dict.py```
 
-Puede adicionalmente consultar la ayuda con _python dict.py —help_.
+Puede adicionalmente consultar la ayuda con ```python dict.py —help```
 
 ## Ejemplos
 
