@@ -11,6 +11,7 @@
 # Importación de liberías
 from utils import *
 
+
 # Definicion de constantes
 global source
 DEFAULT_LOOK = getConfigValue("source.defaults", True)
@@ -110,7 +111,7 @@ def printHelp():
                 print "\t{0}{1}".format(f.ljust(maxsep), getConfigValue(f, True, True))
                 break
     print "\n" + color.BOLD + "AUTOR" + color.END
-    print "\tPablo Pizarro, ver en " + color.UNDERLINE + "http://ppizarror.com" + color.END
+    print "\tPablo Pizarro, ver en " + color.UNDERLINE + "https://ppizarror.com" + color.END
     print ""
     exit()
 

@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d7c2fd5e-ff43-468e-87e4-c35880a7d287" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LICENSE" afterPath="$PROJECT_DIR$/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/dict.configs" afterPath="$PROJECT_DIR$/config/dict.configs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/result.lines.separation" afterPath="$PROJECT_DIR$/config/result.lines.separation" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/result.title.bold" afterPath="$PROJECT_DIR$/config/result.title.bold" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/result.title.upper" afterPath="$PROJECT_DIR$/config/result.title.upper" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/results.color" afterPath="$PROJECT_DIR$/config/results.color" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/results.sort" afterPath="$PROJECT_DIR$/config/results.sort" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/source.defaults" afterPath="$PROJECT_DIR$/config/source.defaults" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dict.py" afterPath="$PROJECT_DIR$/dict.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/VerticalScrolledFrame.py" afterPath="$PROJECT_DIR$/lib/VerticalScrolledFrame.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/__init__.py" afterPath="$PROJECT_DIR$/lib/mechanize/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_auth.py" afterPath="$PROJECT_DIR$/lib/mechanize/_auth.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_beautifulsoup.py" afterPath="$PROJECT_DIR$/lib/mechanize/_beautifulsoup.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_clientcookie.py" afterPath="$PROJECT_DIR$/lib/mechanize/_clientcookie.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_debug.py" afterPath="$PROJECT_DIR$/lib/mechanize/_debug.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_firefox3cookiejar.py" afterPath="$PROJECT_DIR$/lib/mechanize/_firefox3cookiejar.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_form.py" afterPath="$PROJECT_DIR$/lib/mechanize/_form.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_gzip.py" afterPath="$PROJECT_DIR$/lib/mechanize/_gzip.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_headersutil.py" afterPath="$PROJECT_DIR$/lib/mechanize/_headersutil.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_html.py" afterPath="$PROJECT_DIR$/lib/mechanize/_html.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_http.py" afterPath="$PROJECT_DIR$/lib/mechanize/_http.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_lwpcookiejar.py" afterPath="$PROJECT_DIR$/lib/mechanize/_lwpcookiejar.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_markupbase.py" afterPath="$PROJECT_DIR$/lib/mechanize/_markupbase.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_mechanize.py" afterPath="$PROJECT_DIR$/lib/mechanize/_mechanize.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_mozillacookiejar.py" afterPath="$PROJECT_DIR$/lib/mechanize/_mozillacookiejar.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_msiecookiejar.py" afterPath="$PROJECT_DIR$/lib/mechanize/_msiecookiejar.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_opener.py" afterPath="$PROJECT_DIR$/lib/mechanize/_opener.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_pullparser.py" afterPath="$PROJECT_DIR$/lib/mechanize/_pullparser.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_request.py" afterPath="$PROJECT_DIR$/lib/mechanize/_request.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_response.py" afterPath="$PROJECT_DIR$/lib/mechanize/_response.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_rfc3986.py" afterPath="$PROJECT_DIR$/lib/mechanize/_rfc3986.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_sgmllib_copy.py" afterPath="$PROJECT_DIR$/lib/mechanize/_sgmllib_copy.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_sockettimeout.py" afterPath="$PROJECT_DIR$/lib/mechanize/_sockettimeout.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_testcase.py" afterPath="$PROJECT_DIR$/lib/mechanize/_testcase.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_urllib2.py" afterPath="$PROJECT_DIR$/lib/mechanize/_urllib2.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_urllib2_fork.py" afterPath="$PROJECT_DIR$/lib/mechanize/_urllib2_fork.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_useragent.py" afterPath="$PROJECT_DIR$/lib/mechanize/_useragent.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_util.py" afterPath="$PROJECT_DIR$/lib/mechanize/_util.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/mechanize/_version.py" afterPath="$PROJECT_DIR$/lib/mechanize/_version.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pyperclip/__init__.py" afterPath="$PROJECT_DIR$/lib/pyperclip/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/pyperclip/pyperclip.py" afterPath="$PROJECT_DIR$/lib/pyperclip/pyperclip.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils.py" afterPath="$PROJECT_DIR$/utils.py" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="utils.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="42" column="35" lean-forward="false" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dict.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dict.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2430">
+              <caret line="90" column="4" lean-forward="false" selection-start-line="90" selection-start-column="4" selection-end-line="90" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/utils.py" />
+        <option value="$PROJECT_DIR$/dict.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-9" />
+    <option name="y" value="29" />
+    <option name="width" value="1938" />
+    <option name="height" value="1060" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TerminalDictionary" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TerminalDictionary" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.dict">
+    <configuration default="false" name="dict" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="TerminalDictionary" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/dict.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="TerminalDictionary" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="TerminalDictionary" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="TerminalDictionary" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="TerminalDictionary" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Python.dict" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="Python.dict" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d7c2fd5e-ff43-468e-87e4-c35880a7d287" name="Default" comment="" />
+      <created>1498513067254</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1498513067254</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-9" y="29" width="1938" height="1060" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973147" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="42" column="35" lean-forward="false" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2430">
+          <caret line="90" column="4" lean-forward="false" selection-start-line="90" selection-start-column="4" selection-end-line="90" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

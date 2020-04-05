@@ -11,8 +11,21 @@
 # Importación de liberías de alto nivel
 LIBSTAT = [True, True]
 
-import sys
+import cookielib
+import ctypes
+from functools import partial
+import htmlentitydefs
 import os
+import random
+import re
+import re
+import sys
+import time
+import urllib
+from uuid import getnode as get_mac
+import webbrowser
+
+
 try:
     import pygame
 except:
@@ -27,19 +40,8 @@ sys.path.append(_actualpath + "/lib/")
 sys.path.append(_actualpath + "/lib/mechanize/")
 sys.path.append(_actualpath + "/lib/pyperclip")
 
-# Importación de librerías de bajo nivel
-from functools import partial
-from uuid import getnode as get_mac
-import cookielib
-import ctypes
-import htmlentitydefs
+# Importación de librerías externas
 import mechanize
-import random
-import re
-import re
-import time
-import urllib
-import webbrowser
 
 # Definición de constantes
 CONFIG_FOLDER = "config/"
@@ -197,8 +199,8 @@ def unescape(text):
 def delAcents(text):
     """Elimina los acentos"""
     if os.name == "nt":
-        text = text.replace("Á", "A").replace("É", "E").replace(
-            "Í", "I").replace("Ó", "O").replace("Ú", "U")
+        text = text.replace("�?", "A").replace("É", "E").replace(
+            "�?", "I").replace("Ó", "O").replace("Ú", "U")
         text = text.replace("á", "a").replace("é", "e").replace(
             "í", "i").replace("ó", "o").replace("ú", "u")
         text = text.replace("Ñ", "ñ")
@@ -207,7 +209,7 @@ def delAcents(text):
 
 def upperAcents(text):
     """Convierte los acentos a mayusculas"""
-    return text.replace("á", "Á").replace("é", "É").replace("í", "Í").replace("ó", "Ó").replace("ú", "Ú")
+    return text.replace("á", "�?").replace("é", "É").replace("í", "�?").replace("ó", "Ó").replace("ú", "Ú")
 
 
 def getError(iderr):
