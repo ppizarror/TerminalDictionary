@@ -8,28 +8,8 @@
 # Fecha: JUNIO 2015
 # Licencia: CC BY-NC 4.0
 
-# Importación de liberías de alto nivel
-LIBSTAT = [True, True]
-
-import cookielib
-import ctypes
-from functools import partial
-import htmlentitydefs
-import os
-import random
-import re
-import re
 import sys
-import time
-import urllib
-from uuid import getnode as get_mac
-import webbrowser
-
-
-try:
-    import pygame
-except:
-    LIBSTAT[0] = False
+import os
 
 # Configuración de las librerías de alto nivel
 reload(sys)
@@ -40,11 +20,16 @@ sys.path.append(_actualpath + "/lib/")
 sys.path.append(_actualpath + "/lib/mechanize/")
 sys.path.append(_actualpath + "/lib/pyperclip")
 
-# Importación de librerías externas
+# Importación de librerías de bajo nivel
+from uuid import getnode as get_mac
+import cookielib
+import htmlentitydefs
 import mechanize
+import re
+import webbrowser
 
 # Definición de constantes
-CONFIG_FOLDER = "config/"
+CONFIG_FOLDER = "./lib/.config/"
 HREF_HEADERS = "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1"
 CONSOLE_WRAP = -25
 CMD_COLORS = {"red": 0x40, "lred": 0xC0, "gray": 0x80, "lgray": 0x70, "white": 0xF0, "blue": 0x10,
@@ -63,7 +48,7 @@ BR_ERRORxNO_VALID_SUBMIT_NOT_EQUAL = 7
 TAG_ERRORxCANT_RETRIEVE_HTML = 16
 TAG_INIT_NOT_CORRECT_ENDING = 14
 TAG_INIT_NOT_FINDED = 13
-TAG_LAS_NOT_FINDED = 15
+TAG_LAST_NOT_FINDED = 15
 ERRORS = {
     BR_ERRORxERROR_SET_FORM: "Error al establecer el formulario activo",
     BR_ERRORxERROR_SET_SUBMIT: "Error al enviar los datos",
@@ -77,7 +62,7 @@ ERRORS = {
     BR_ERRORxNO_VALID_SUBMIT_NOT_EQUAL: "No se satisfacen todos los datos pedidos por el formulario",
     TAG_ERRORxCANT_RETRIEVE_HTML: "No se puede devolver el texto entre los tags",
     TAG_INIT_NOT_CORRECT_ENDING: "No se ha encontrado > en el tag inicial",
-    TAG_INIT_NOT_FINDED: "El tag final no ha sido encontrado en el código",
+    TAG_LAST_NOT_FINDED: "El tag final no ha sido encontrado en el código",
     TAG_INIT_NOT_FINDED: "El tag inicial a buscar no está en el código"
 }
 
@@ -94,7 +79,7 @@ def reverseDict(old_dict):
 def cleanConfigDir():
     """Elima archivos cache de la carpeta config"""
     try:
-        os.remove('config/.empty')
+        os.remove(CONFIG_FOLDER + '.empty')
     except:
         pass
 
@@ -109,6 +94,7 @@ def getMacDir(lower=False):
 
 def getConfigValue(configFile, upper=False, autoTrue=True):
     """Lee la linea de un archivo de configuracion"""
+    f = None
     try:
         f = open(CONFIG_FOLDER + configFile, "r")
     except:
@@ -148,6 +134,7 @@ def addLineConfigFile(configFile, line):
 
 def setConfig(configFile, configValue):
     """Crea un archivo de configuracion con el valor configValue"""
+    f = None
     try:
         f = open(CONFIG_FOLDER + configFile, "w")
     except:
@@ -199,8 +186,8 @@ def unescape(text):
 def delAcents(text):
     """Elimina los acentos"""
     if os.name == "nt":
-        text = text.replace("�?", "A").replace("É", "E").replace(
-            "�?", "I").replace("Ó", "O").replace("Ú", "U")
+        text = text.replace("Á", "A").replace("É", "E").replace(
+            "Í", "I").replace("Ó", "O").replace("Ú", "U")
         text = text.replace("á", "a").replace("é", "e").replace(
             "í", "i").replace("ó", "o").replace("ú", "u")
         text = text.replace("Ñ", "ñ")
@@ -209,7 +196,7 @@ def delAcents(text):
 
 def upperAcents(text):
     """Convierte los acentos a mayusculas"""
-    return text.replace("á", "�?").replace("é", "É").replace("í", "�?").replace("ó", "Ó").replace("ú", "Ú")
+    return text.replace("á", "Á").replace("é", "É").replace("í", "Í").replace("ó", "Ó").replace("ú", "Ú")
 
 
 def getError(iderr):
@@ -262,20 +249,21 @@ def loadFromArchive(archive, lang="Cargando archivo '{0}' ...", showState=True):
     if not showState:
         print lang.format("(...)" + archive[CONSOLE_WRAP:].replace("//", "/")).replace("\"", ""),
     try:  # Se carga el archivo
-        l = list()
+        le = list()
         archive = open(archive, "r")
         for i in archive:
-            l.append(i.decode('utf-8').strip())
+            le.append(i.decode('utf-8').strip())
         archive.close()
         if showState:
             print "ok"
     except:
         if showState:
             print "error"
-        l = []
-    return l
+        le = []
+    return le
 
 
+# noinspection PyUnusedLocal
 def openWeb(url, event):
     """Abre una direccion web"""
     webbrowser.open(url)
@@ -286,12 +274,12 @@ def getBetween(html, a, b):
     try:
         posa = html.index(a)  # se encuentra el primer puntero
     except:
-        return DATA_ERRORxNO_APOS_IN_DATA
+        return ''
     posa += len(a)
     try:
         posb = html.index(b, posa)  # se encuentra el primer puntero
     except:
-        return DATA_ERRORxNO_BPOS_IN_DATA
+        return ''
     return html[posa:posb]
 
 
@@ -317,7 +305,7 @@ def getBetweenTags(html, tagi, tagf):  # Función que retorna un valor entre dos
     try:
         posf = html.index(tagf, posi)  # busco el segundo tag
     except:
-        return TAG_LAS_NOT_FINDED
+        return TAG_LAST_NOT_FINDED
     try:
         return html[posi:posf]  # devuelvo la cadena entre los tags
     except:
@@ -347,7 +335,7 @@ def getWithTags(html, tagi, tagf):
         else:
             posf += len(tagf)
     except:
-        return TAG_LAS_NOT_FINDED
+        return TAG_LAST_NOT_FINDED
     try:
         return html[posi:posf]  # devuelvo la cadena entre los tags
     except:
@@ -371,6 +359,7 @@ class Browser:
         self.br.set_handle_referer(True)
         self.br.set_handle_refresh(False)
         self.br.set_handle_robots(False)
+        # noinspection PyProtectedMember,PyUnresolvedReferences
         self.br.set_handle_refresh(
             mechanize._http.HTTPRefreshProcessor(), max_time=1)
 
