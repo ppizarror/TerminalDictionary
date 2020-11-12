@@ -3,3 +3,5 @@
 
 # OS-X cache files
 .DS_Store
+.idea
+.vscode

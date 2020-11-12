@@ -18,20 +18,15 @@ Puede adicionalmente consultar la ayuda con ```python dict.py —help```
 
 ## Ejemplos
 
-![usage][image-1]
-![Definición en español][image-2]
-![Sinónimos en español (también en inglés)][image-3]
-![Buscando en varios diccionarios][image-4]
+<img src="https://res.ppizarror.com/images/dict/uso.png" width="70%" alt="Uso" />
+<img src="https://res.ppizarror.com/images/dict/espanol.png" width="70%" alt="Español" />
+<img src="https://res.ppizarror.com/images/dict/sinonimos.png" width="70%" alt="Sinónimos" />
+<img src="https://res.ppizarror.com/images/dict/extenso.png" width="70%" alt="Busqueda en varios diccionarios" />
 
 ## Licencia
 
 Este proyecto está licenciado bajo GPLv2 [https://www.gnu.org/licenses/gpl-2.0.html]
 
-[image-1]: https://res.ppizarror.com/images/dict/uso.png "Uso del script"
-[image-2]: https://res.ppizarror.com/images/dict/espanol.png "Español"
-[image-3]: https://res.ppizarror.com/images/dict/sinonimos.png "Sinónimos"
-[image-4]: https://res.ppizarror.com/images/dict/extenso.png "Busqueda en varios diccionarios"
-
-
 ## Autor
-<a href="https://ppizarror.com" title="ppizarror">Pablo Pizarro R.</a> | 2015
+
+<a href="https://ppizarror.com" title="ppizarror">Pablo Pizarro R.</a> | 2015 - 2020
